@@ -1,20 +1,7 @@
 # Maze Navigation Using Reinforcement Learning (DQN)
 
-## Introduction
-Robots and autonomous agents require efficient path-planning algorithms to navigate complex environments. Reinforcement Learning (RL) provides an adaptive approach to train an agent to explore and reach a goal while avoiding obstacles.  
-This project focuses on training a simulated robot using **Deep Q-Networks (DQN)** to navigate a predefined maze efficiently in PyBullet. The robot receives **rewards** for reaching the goal and **penalties** for collisions, enabling it to learn an optimal path over multiple episodes.
 
----
 
-## Problem Statement
-Design and train a simulated robot in PyBullet to navigate a maze efficiently using RL. The main challenges include:
-
-- Defining a maze environment with obstacles.
-- Implementing a reward system that encourages optimal navigation.
-- Training the robot using a DQN to improve path-finding efficiency over episodes.
-- Avoiding collisions with walls while minimizing steps to the goal.
-
----
 
 ##  Methodology
 
@@ -71,10 +58,3 @@ The robot can move in four discrete directions:
 - **Reward Accumulation:** Tracks learning progress.
 
 ---
-
-##  Conclusion and Future Work
-
-### Conclusion
-This project demonstrates RL (DQN) applied to maze navigation. The robot learns to navigate efficiently using a reward-based training mechanism.  
-The Q-learning framework optimizes movement while minimizing penalties, allowing the robot to reach the goal efficiently.
-
