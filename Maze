@@ -1,0 +1,68 @@
+
+Maze Navigation: Design a Simulated Robot and Train it to Navigate a Maze Using Reinforcement Learning
+
+1. Introduction
+Robots and artificial agents require efficient path-planning algorithms to navigate through complex environments. Reinforcement Learning (RL) provides an adaptive approach for training an agent to explore and reach a goal while avoiding obstacles. This project focuses on training a simulated robot using Deep Q-Networks (DQN) to navigate a predefined maze efficiently. The robot receives rewards for reaching the goal and penalties for hitting walls, making it to learn an optimal path over multiple episodes.
+
+2. Problem Statement
+Design a simulated robot in PyBullet and implement a Reinforcement Learning (RL) model to train the robot to navigate a maze efficiently. The challenges include:
+•	Defining a maze environment with obstacles.
+•	Implementing a reward system that encourages optimal navigation.
+•	Training the robot using a Deep Q-Network (DQN) to improve path-finding efficiency over episodes.
+•	Avoiding collisions with walls while minimizing steps to the goal.
+
+3. Methodology
+3.1 Maze Environment Setup
+•	The maze is defined on a 10x10 grid with each cell representing a 0.5m x 0.5m space.
+•	The robot (R2D2) is loaded in PyBullet, which simulates physics-based interactions.
+•	Walls are placed strategically to form a challenging path to the goal.
+•	The goal is set at position (8,8), and the robot starts at (0.5,0.5).
+
+3.2 Reinforcement Learning Approach
+The Deep Q-Network (DQN) algorithm is used to train the robot.
+3.2.1 State Representation
+The state is represented as:
+•	The robot’s current position (x, y).
+•	The relative distance to the goal.
+3.2.2 Action Space
+The robot can move in four directions:
+•	Right (0.5, 0)
+•	Left (-0.5, 0)
+•	Up (0, 0.5)
+•	Down (0, -0.5)
+3.2.3 Reward Function
+A reward system is designed as follows:
+•	+10 when reaching the goal.
+•	-5 for hitting a wall.
+•	-1 for each step (to encourage efficiency).
+3.3 Deep Q-Network (DQN) Implementation
+•	Neural Network: Three-layer fully connected network with ReLU activation.
+•	Experience Replay: Stores past experiences in memory to improve learning stability.
+•	Epsilon-Greedy Strategy: Starts with random actions and gradually shifts to policy-based actions.
+•	Target Network Update: Helps in stabilizing the learning process.
+3.4 Training Process
+•	The agent is trained for 20 episodes, each with a maximum of 200 steps.
+•	Exploration-Exploitation trade-off is handled using epsilon decay.
+•	The robot learns to avoid walls and reach the goal through trial and error.
+
+
+4. Results and Analysis
+4.1 Observations During Training
+•	Initially, the robot randomly explores the maze and frequently hits walls.
+•	Over episodes, Q-values update and the robot starts choosing better actions.
+•	By the final episodes, the robot efficiently reaches the goal with fewer steps and minimal penalties.
+ 
+ 
+4.2 Performance Metrics
+•	Success Rate: The percentage of episodes where the robot reaches the goal.
+•	Average Steps to Goal: Measures efficiency in navigation.
+•	Reward Accumulation: Tracks learning progress.
+5. Conclusion and Future Work
+5.1 Conclusion
+This project successfully demonstrates Reinforcement Learning (DQN) applied to maze navigation. The robot learns to navigate efficiently using a reward-based training mechanism. The Q-learning framework effectively optimizes movement while minimizing penalties, allowing the robot to reach the goal efficiently.
+
+5.2 Future Improvements
+•	Increase Maze Complexity: Add dynamic obstacles or larger mazes.
+•	Multi-Agent Training: Implement multiple robots in a cooperative or competitive environment.
+•	Real-World Applications: Extend RL-based pathfinding to robotic navigation systems.
+•	Continuous Action Space: Implement Deep Deterministic Policy Gradient (DDPG) for smoother movements.
